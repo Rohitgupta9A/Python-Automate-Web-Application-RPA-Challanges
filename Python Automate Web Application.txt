@@ -1,0 +1,43 @@
+import time
+import pandas
+from selenium import webdriver
+
+#import Excel data
+df=pandas.read_excel(r'C:\Users\9aadmin\Downloads\challenge.xlsx')
+df.head()
+
+
+driver=webdriver.Chrome()
+driver.get(Url);
+time.sleep(5) #Let the user actually see something!
+
+
+
+driver.find_element("xpath", "/html/body/app-root/div[2]/app-rpa1/div/div[1]/div[6]/button").click()
+
+time.sleep(2) #Let the user actually see something!
+
+for index, row in df.iterrows():
+    First_Name= row['First Name']  # Access the 'Name' column
+    Last_Name= row['Last Name']  # Access the 'Name' column
+    Company_Name= row['Company Name']  # Access the 'Name' column
+    Role_in_Company= row['Role in Company']  # Access the 'Name' column
+    Address= row['Address']  # Access the 'Name' column
+    Email= row['Email']  # Access the 'Name' column
+    Phone_Number = row['Phone Number']  # Access the 'Name' column
+   
+  #Fill data in web page
+    
+    FirstName=driver.find_element("xpath","//*[@ng-reflect-name='labelFirstName']").send_keys(First_Name)
+    FirstName=driver.find_element("xpath","//*[@ng-reflect-name='labelLastName']").send_keys(Last_Name)
+    FirstName=driver.find_element("xpath","//*[@ng-reflect-name='labelCompanyName']").send_keys(Company_Name)
+    FirstName=driver.find_element("xpath","//*[@ng-reflect-name='labelRole']").send_keys(Role_in_Company)
+    FirstName=driver.find_element("xpath","//*[@ng-reflect-name='labelAddress']").send_keys(Address)
+    FirstName=driver.find_element("xpath","//*[@ng-reflect-name='labelEmail']").send_keys(Email)
+    FirstName=driver.find_element("xpath","//*[@ng-reflect-name='labelPhone']").send_keys(Phone_Number)
+    
+    time.sleep(1) #Let the user actually see something!
+    
+# Submit button
+
+    driver.find_element("xpath","//input[@class='btn uiColorButton']").click()
