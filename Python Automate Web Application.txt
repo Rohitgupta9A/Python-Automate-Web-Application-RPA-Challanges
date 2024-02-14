@@ -41,3 +41,14 @@ for index, row in df.iterrows():
 # Submit button
 
     driver.find_element("xpath","//input[@class='btn uiColorButton']").click()
+====================================================================================================
+  driver.find_element("xpath","//*[@id='customerfirstname']").send_keys(First_Name)
+    driver.find_element("xpath","//*[@id='customerlastname']").send_keys(Last_Name)
+    driver.find_element("xpath","//*[@id='email']").send_keys(Email)
+    driver.find_element("xpath","//*[@id='city']").send_keys(City)
+    driver.find_element("xpath","//*[@id='state']").send_keys(State)
+    driver.find_element("xpath","//*[@id='clothingsize-"+ Clothing_Size  + "']").click()  # Pass Variable operation
+    driver.find_element("xpath","//*[@id='dateofbirth']").send_keys(Date_of_Birth)  # Select values From Drop Down
+    driver.find_element("xpath","//*[@id='add_button']").click()
+
+driver.find_element("xpath","//*[@id='submit_button']").click()
