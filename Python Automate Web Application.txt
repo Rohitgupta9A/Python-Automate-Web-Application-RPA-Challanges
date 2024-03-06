@@ -52,3 +52,8 @@ for index, row in df.iterrows():
     driver.find_element("xpath","//*[@id='add_button']").click()
 
 driver.find_element("xpath","//*[@id='submit_button']").click()
+
+
+ FirstName=driver.find_element("xpath","//*[@ng-reflect-name='labelFirstName']")
+FirstName.text() - Get data from webportal
+    
